@@ -9,29 +9,19 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="app" v-for="(autore index) in autori">
+        <div id="app">
             <header>
                 <div class="container">
                     <img src="logo.png" alt="logo" />
                 </div>
             </header>
-
             <div class="cds-container container">
                 <!-- Disco ad esempio -->
-                <div class="cd">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Ten_Summoner%27s_Tales.jpg" alt="">
-                    <h3>Ten's Summoners Tales</h3>
-                    <span class="author">Sting</span>
-                    <span class="year">1993</span>
-                </div>
-            </div>
-            <div class="cds-container container">
-                <!-- Disco ad esempio -->
-                <div class="cd">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Ten_Summoner%27s_Tales.jpg" alt="">
-                    <h3>Ten's Summoners Tales</h3>
-                    <span class="author">{{ autore[index] }}</span>
-                    <span class="year">{{autore}}</span>
+                <div class="cd" v-for="autore in autori">
+                    <img :src="autore.poster" alt="">
+                    <h3>{{autore.title}}</h3>
+                    <span class="author">{{ autore.author }}</span>
+                    <span class="year">{{autore.year}}</span>
                 </div>
             </div>
         </div>
